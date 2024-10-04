@@ -1,6 +1,7 @@
 Question - 1
 
 step - 1: Created a config file in /etc/nginx/sites-available with name awesomeweb with below content.
+
 	server {
 		listen 80;
 		server_name awesomeweb;
@@ -16,11 +17,12 @@ step - 1: Created a config file in /etc/nginx/sites-available with name awesomew
 step - 2: Created awesomeweb directory inside  /var/www/, and created a index.html file with custom html contents.
 
 step - 3: Linked /etc/nginx/sites-available/awesomeweb with /etc/nginx/sites-enabled with below command
+
 	sudo ln -s /etc/nginx/sites-available/awesomeweb /etc/nginx/sites-enabled/
 
-step - 4: Restarted nginx server with sudo systemctl restart nginx/sites-available
+step - 4: Restarted nginx server with 'sudo systemctl restart nginx'
 
-step - 5: Checked the server with curl awesomeweb
+step - 5: Checked the server with 'curl awesomeweb'
 
 
 
@@ -31,6 +33,7 @@ Question - 2
 step - 1: Install tabulate library using pip install tabulate
 
 step - 2: Write a function getStatus to get status of subdomains.
+
 	def getStatus(url):
 		try:
 			response = requests.get(url, timeout=5)
@@ -44,6 +47,7 @@ step - 2: Write a function getStatus to get status of subdomains.
 			return "Timeout"
 
 step - 3: Write a infinite loop, which will pause for 60 seconds after every run, and check for status of each subdomain available.
+
 	def monitor_subdomains():
 		while True:
 			results = []
@@ -61,6 +65,7 @@ step - 3: Write a infinite loop, which will pause for 60 seconds after every run
 			time.sleep(60)
 
 step - 4: Run the function from main.
+
 	if __name__ == "__main__":
 		monitor_subdomains()
 
